@@ -242,7 +242,7 @@ class Node {
 
     if(myname == dstname)
     {
-      printf("*****myname == dstname\n");
+      // printf("*****myname == dstname\n");
       RoutingEntry entry;
       entry.dstip = dstip;
       entry.nexthop = dstip;
@@ -251,7 +251,7 @@ class Node {
       entry.myname = myname;
       entry.dstname = dstname;
       mytbl.tbl.push_back(entry);
-      printf("\t !! [+] Added entry: %s | %s | %s | %d\n",entry.dstip.c_str() , entry.ip_interface.c_str(), entry.nexthop.c_str(), entry.cost);
+      // printf("\t !! [+] Added entry: %s | %s | %s | %d\n",entry.dstip.c_str() , entry.ip_interface.c_str(), entry.nexthop.c_str(), entry.cost);
     }
     else if(found == 1)
     {
@@ -263,7 +263,7 @@ class Node {
       entry.myname = myname;
       entry.dstname = dstname;
       mytbl.tbl.push_back(entry);
-      printf("\t !! [+] Added entry: %s | %s | %s | %d\n",entry.dstip.c_str() , entry.ip_interface.c_str(), entry.nexthop.c_str(), entry.cost);
+      // printf("\t !! [+] Added entry: %s | %s | %s | %d\n",entry.dstip.c_str() , entry.ip_interface.c_str(), entry.nexthop.c_str(), entry.cost);
 
     }
     else
@@ -276,7 +276,7 @@ class Node {
       entry.myname = myname;
       entry.dstname = dstname;
       mytbl.tbl.push_back(entry);
-      printf("\t !! [+] Added entry: %s | %s | %s | %d\n",entry.dstip.c_str() , entry.ip_interface.c_str(), entry.nexthop.c_str(), entry.cost);
+      // printf("\t !! [+] Added entry: %s | %s | %s | %d\n",entry.dstip.c_str() , entry.ip_interface.c_str(), entry.nexthop.c_str(), entry.cost);
 
     }
   }

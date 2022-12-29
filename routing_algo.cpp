@@ -24,13 +24,13 @@ void fillRoutingTable(vector<Node*> nd){
   {
     Node *n = nd[j];
     string myname = n->getName();
-    printf("Filling table for %s \n", myname.c_str());
+    // printf("Filling table for %s \n", myname.c_str());
     vector<string> myip = n->getIps();
     for(int k = 0 ; k < nd.capacity() ; k++)
     {
       Node *n2 = nd[k];
       string dstname = n2->getName();
-      printf("\t-----Checking if all node %s in %s-----\n", dstname.c_str(), myname.c_str());
+      // printf("\t-----Checking if all node %s in %s-----\n", dstname.c_str(), myname.c_str());
       vector<pair<NetInterface, Node*> > check_interfaces = n2->getInterfaces();
       for(int l = 0 ; l < check_interfaces.size() ; l++)
       {
@@ -40,11 +40,11 @@ void fillRoutingTable(vector<Node*> nd){
         {
           if(n->entryexiste(myip[ml] ,to_ip))
           {
-            printf("\t [+] Interface %s to %s is present \n",myip[ml].c_str(), to_ip.c_str());
+            // printf("\t [+] Interface %s to %s is present \n",myip[ml].c_str(), to_ip.c_str());
           }
           else
           {
-            printf("\t [-] Interface %s to %s is not present adding entry :) \n",myip[ml].c_str(), to_ip.c_str());
+            // printf("\t [-] Interface %s to %s is not present adding entry :) \n",myip[ml].c_str(), to_ip.c_str());
             n->add_entry(to_ip, to_name, myip[ml], myname);
 
           }
@@ -58,12 +58,12 @@ void routingAlgo(vector<Node*> nd)
 {
   bool saturation=false;
 
-  printf("\n~~~~~~~~~~~~~~Routing Algorithm function started~~~~~~~~~~~~~~~\n\n");
-  printf("\n~~~~~~~~~~~~~~Printing Inputted Routing tables~~~~~~~~~~~~~~~\n");
+  // printf("\n~~~~~~~~~~~~~~Routing Algorithm function started~~~~~~~~~~~~~~~\n\n");
+  printf("\n~~~~~~~~~~~~~~Your Inputted Routing tables~~~~~~~~~~~~~~~\n");
   printRT(nd);
 
   // update all routing entries in my routing table
-  printf("\n~~~~~~~~~~~~~~Updating tables~~~~~~~~~~~~~~~\n");
+  // printf("\n~~~~~~~~~~~~~~Updating tables~~~~~~~~~~~~~~~\n");
   fillRoutingTable(nd);
   
   //storing previous table for convergence
@@ -74,12 +74,12 @@ void routingAlgo(vector<Node*> nd)
   }
 
   // print intial routing table
-  printf("\n~~~~~~~~~~~~~~Printing tables before convergences~~~~~~~~~~~~~~~\n");
-  printRT(nd);
+  // printf("\n~~~~~~~~~~~~~~Printing tables before convergences~~~~~~~~~~~~~~~\n");
+  // printRT(nd);
 
   
   
-  printf("\n~~~~~~~~~~~~~~Calling sendMsg Function~~~~~~~~~~~~~~~\n");
+  // printf("\n~~~~~~~~~~~~~~Calling sendMsg Function~~~~~~~~~~~~~~~\n");
   int j=0;
   for (Node* node: nd){
     node->sendMsg(nd , j);
@@ -90,16 +90,16 @@ void routingAlgo(vector<Node*> nd)
   while(1)
   {
 
-      printf("iteration %d \n", i);
+      // printf("iteration %d \n", i);
       if(Convergence(nd , prev_tbl) || i == 5){
-        printf("Convergence reached \n");
+        // printf("Convergence reached \n");
         break;  
       }
       else
       {
-        printf("Convergence not reached \n");
+        // printf("Convergence not reached \n");
         int j=0;
-        printf("~~~~~~~~~~~~~~Calling sendMsg Function~~~~~~~~~~~~~~~\n");
+        // printf("~~~~~~~~~~~~~~Calling sendMsg Function~~~~~~~~~~~~~~~\n");
         for (Node* node: nd){
           // printf("x-----------------------x\n");
           node->sendMsg(nd , j);
@@ -116,8 +116,9 @@ void routingAlgo(vector<Node*> nd)
   
 
   /*Print routing table entries after routing algo converges */
-  printf("Printing the routing tables after the convergence \n");
+  printf("\n\n~~~~~~~~~~~~~~Final routing tables after the convergence~~~~~~~~~~~~~~~\n\n");
   printRT(nd);
+  printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 }
 
 int find_cost(routingtbl *mytbl , pair<string,string> my_info , pair<string,string> to_info)
