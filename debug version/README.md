@@ -27,7 +27,7 @@ Step 2 : Run the compiled executable file using the command -
 
 ## Sample Input 
 
-<img src="https://i.ibb.co/sFv708K/sample-example.png" alt="sample-example" border="0"  style="width:300px;"><br />
+<img src="https://i.ibb.co/sFv708K/sample-example.png" alt="sample-example" border="0"  style="width:800px;"><br />
 
     3
     A B C
