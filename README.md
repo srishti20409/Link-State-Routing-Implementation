@@ -1,5 +1,9 @@
 # Computer-Networks-Monsoon-2022
 
+## Version info
+    -Final version of the project is in the folder Final_version
+    -Debug version of the project is in the folder Debug_version
+
 ## Usage
 
 Step 1 : Compile the files using the command - 
