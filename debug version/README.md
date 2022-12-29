@@ -25,7 +25,10 @@ Step 2 : Run the compiled executable file using the command -
             to: <interface_ip> src: <interface_ip> hop: <next_hop_ip> cost: <cost> 
         - The output file is sorted in ascending order of the node names.
 
-## Sample Input
+## Sample Input 
+
+<img src="./sample_example.png">
+
     3
     A B C
     A 10.0.0.1 10.0.0.21 B 1
