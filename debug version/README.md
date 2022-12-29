@@ -3,10 +3,12 @@
 ## Usage
 
 Step 1 : Compile the files using the command - 
-     g++ -std=c++11 main.cpp routing_algo.cpp -o rip
+
+    g++ -std=c++11 main.cpp routing_algo.cpp -o rip
 
 Step 2 : Run the compiled executable file using the command - 
-     ./rip < sampleinput.txt
+
+    ./rip < sampleinput.txt
 
 This debug version 
 
