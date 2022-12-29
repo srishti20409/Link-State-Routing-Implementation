@@ -9,10 +9,8 @@ This is the debug version of the project. It contains the following files -
     - node.h
 
 All the files have print statements to help debug the code. 
-
-Some of the print statements are commented out.
-
-These comments can be removed to get the final version of the project.
+Some of the print statements are commented out. 
+These comments can be removed to get the final version of the project. 
 
 ## Usage
 
